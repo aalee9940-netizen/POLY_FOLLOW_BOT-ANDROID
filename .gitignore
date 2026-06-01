@@ -1,0 +1,109 @@
+# Android
+*.apk
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+build/
+.gradle
+.idea
+*.iml
+*.iws
+*.ipr
+local.properties
+gradle.properties
+out/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.Python
+env/
+venv/
+ENV/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Buildozer
+bin/
+buildozer.spec
+
+# Docker
+.docker
+docker-compose.override.yml
+
+# Editor
+.vscode/
+.DS_Store
+.vim
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+.classpath
+
+# Build outputs
+app/build/
+*.apk
+*.aab
+*.aar
+
+# OS
+Thumbs.db
+.DS_Store
+*.log
+
+# Secrets (IMPORTANT!)
+.env
+secrets/
+private_key.txt
+config.local.json
+config.json
+*.pem
+*.key
+
+# Node modules (if used)
+node_modules/
+
+# Java
+*.class
+.classpath
+.project
+bin/
+
+# Misc
+*.tmp
+.tmp/
+temp/
+.cache/
+
+# Generated files
+*.jar
+*.zip
+
+# Android Studio navigation
+.navigation/
+
+# Kotlin
+.kotlin/
+
+# Gradle wrapper
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties

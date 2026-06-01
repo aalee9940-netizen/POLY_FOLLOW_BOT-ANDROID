@@ -1,0 +1,146 @@
+#:kivy 2.0
+
+<RootWidget>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 15
+        spacing: 10
+        canvas.before:
+            Color:
+                rgba: 0.1, 0.1, 0.1, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        
+        # Header
+        BoxLayout:
+            size_hint_y: 0.1
+            canvas.before:
+                Color:
+                    rgba: 0.2, 0.2, 0.2, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            
+            Label:
+                text: 'Polymarket Trading Bot'
+                font_size: 24
+                bold: True
+                color: 1, 1, 1, 1
+        
+        # Status Grid
+        GridLayout:
+            cols: 2
+            rows: 3
+            size_hint_y: 0.2
+            spacing: 10
+            canvas.before:
+                Color:
+                    rgba: 0.15, 0.15, 0.15, 1
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            
+            # Status
+            Label:
+                text: 'Status:'
+                font_size: 14
+                bold: True
+                color: 0.8, 0.8, 0.8, 1
+            
+            BoxLayout:
+                canvas.before:
+                    Color:
+                        rgba: 1, 0, 0, 0.2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+                Label:
+                    id: status_label
+                    text: 'Stopped'
+                    font_size: 14
+                    color: 1, 0, 0, 1
+            
+            # Balance
+            Label:
+                text: 'Balance:'
+                font_size: 14
+                bold: True
+                color: 0.8, 0.8, 0.8, 1
+            
+            Label:
+                id: balance_label
+                text: '0.00 USDC'
+                font_size: 14
+                color: 0, 1, 0, 1
+            
+            # Trades
+            Label:
+                text: 'Trades:'
+                font_size: 14
+                bold: True
+                color: 0.8, 0.8, 0.8, 1
+            
+            Label:
+                id: trades_label
+                text: '0'
+                font_size: 14
+                color: 0.5, 0.8, 1, 1
+        
+        # Control Buttons
+        BoxLayout:
+            size_hint_y: 0.12
+            spacing: 5
+            
+            Button:
+                id: start_btn
+                text: 'START BOT'
+                background_color: 0, 0.7, 0, 1
+                font_size: 16
+                bold: True
+            
+            Button:
+                id: stop_btn
+                text: 'STOP BOT'
+                background_color: 0.7, 0, 0, 1
+                font_size: 16
+                bold: True
+            
+            Button:
+                id: settings_btn
+                text: 'SETTINGS'
+                background_color: 0.5, 0.5, 0.5, 1
+                font_size: 16
+                bold: True
+        
+        # Log Viewer
+        Label:
+            text: 'Activity Log'
+            size_hint_y: 0.08
+            font_size: 14
+            bold: True
+            color: 1, 1, 1, 1
+        
+        ScrollView:
+            size_hint_y: 0.58
+            
+            Label:
+                id: log_text
+                text: 'Waiting for bot to start...'
+                font_size: 12
+                color: 0.8, 0.8, 0.8, 1
+                markup: True
+                size_hint_y: None
+                text_size: self.width, None
+                height: self.texture_size[1]
+                padding: 10
+        
+        # Footer
+        Label:
+            text: 'v1.0.0 - Polymarket Trading Bot'
+            size_hint_y: 0.05
+            font_size: 10
+            color: 0.5, 0.5, 0.5, 1
+
+<RootWidget>:
+    pass

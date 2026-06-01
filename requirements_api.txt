@@ -1,0 +1,16 @@
+# Python Backend Requirements for Polymarket Trading Bot API
+
+# Existing bot dependencies (keep your current ones)
+# Add these for the API layer:
+
+Flask==3.0.0
+Flask-CORS==4.0.0
+
+# If not already installed:
+py-clob-client>=1.0.0
+requests>=2.31.0
+python-dotenv>=1.0.0
+
+# Optional: For production deployment
+gunicorn==21.2.0
+python-dateutil>=2.8.2

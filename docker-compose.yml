@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  android-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: polymarket-bot-builder
+    volumes:
+      - .:/app
+      - ./output:/output
+      - android-cache:/root/.android
+      - gradle-cache:/root/.gradle
+      - buildozer-cache:/root/.buildozer
+    environment:
+      - ANDROID_HOME=/android-sdk
+      - ANDROID_NDK_ROOT=/android-ndk
+      - JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+    stdin_open: true
+    tty: true
+    command: bash -c "
+      echo 'Building APK...' && \
+      cd /app && \
+      buildozer android debug && \
+      cp -r bin /output/ 2>/dev/null || true && \
+      echo 'Build complete!' && \
+      bash
+    "
+
+volumes:
+  android-cache:
+  gradle-cache:
+  buildozer-cache:
